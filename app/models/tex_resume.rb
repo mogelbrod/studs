@@ -79,7 +79,7 @@ class TexResume
     # All special characters will have four backslashes prepended
     # Two of them are used to escape the other two, thus \\\\# will give \\# in the next step
     # In the next step one is used to escape the other, leaving \# for the last step (which is the .tex one)
-    str.blank? ? '' : str.gsub(/\&/, '\\\\&').gsub(/%/, '\\\\%').gsub(/\$/, '\\\\$').gsub(/\#/, '\\\\#').gsub(/\n/, '\\\\\\\\')
+    str.blank? ? '' : str.gsub(/\&/, '\\\\&').gsub(/%/, '\\\\%').gsub(/\$/, '\\\\$').gsub(/\#/, '\\\\#').gsub(/\n/, '\\\\\\\\').encode('utf-8')
   end
 end
 

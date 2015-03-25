@@ -58,7 +58,7 @@
 <% if experiences["work"].is_a?(Array) && experiences["work"].count > 0 %>
   \section{Experience}
   <% experiences["work"].each do |job| %>
-    \cventry{<%=htex "#{job.start_date.strftime('%Y')}--#{job.end_date ? job.end_date.strftime('%Y') : 'present'}"%>}{<%=htex job.title.encode('utf-8') %>}{<%=htex job.organization %>}{<%=htex job.location %>}{}{ <%= job.description.present? ? htex(job.description) : '' %>}
+    \cventry{<%=htex "#{job.start_date.strftime('%Y')}--#{job.end_date ? job.end_date.strftime('%Y') : 'present'}"%>}{<%=htex job.title %>}{<%=htex job.organization %>}{<%=htex job.location %>}{}{ <%= job.description.present? ? htex(job.description) : '' %>}
   <% end %>
 <% end %>
 
